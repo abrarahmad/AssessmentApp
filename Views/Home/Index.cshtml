@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Assessment Language Form</h1>
+        <div class="mb-4">
+            <label class="me-2"><input type="radio" name="controlOption" class="form-check-input" value="OnlyEnglish" checked> Only English</label>
+            <label><input type="radio" name="controlOption" class="form-check-input" value="EnglishAndArabic"> English & Arabic</label>
+        </div>
+        <ul class="nav nav-tabs" id="languageTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="english-tab" data-toggle="tab" href="#english" role="tab" aria-controls="english" aria-selected="true">English</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="arabic-tab" data-toggle="tab" href="#arabic" role="tab" aria-controls="arabic" aria-selected="false">Arabic</a>
+            </li>
+        </ul>
+        <div class="tab-content mb-2" id="languageTabsContent">
+            <div class="tab-pane fade show active" id="english" role="tabpanel" aria-labelledby="english-tab">
+                <div id="englishControlSets">
+                </div>
+                <button type="button" id="addEnglishControlSet" class="btn btn-primary mt-2">Add New</button>
+            </div>
+            <div class="tab-pane fade" id="arabic" role="tabpanel" aria-labelledby="arabic-tab">
+                <div id="arabicControlSets">
+                </div>
+                <button type="button" id="addArabicControlSet" class="btn btn-primary mt-2" style="display: none;">Add New</button>
+            </div>
+        </div>
+        <button type="button" id="submitForm" class="btn btn-success">Submit</button>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/form.js"></script>
+</body>
+</html>
